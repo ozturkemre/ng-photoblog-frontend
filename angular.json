@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-photoblog-frontend"
+    }
+  },
+  "defaultProject": "ng-photoblog-frontend",
+  "cli": {
+    "analytics": "a0624714-f9ca-461d-b7dd-677401a74daa"
+  }
 }
