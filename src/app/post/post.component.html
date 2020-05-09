@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="blog-title">{{post.title}}</h1>
+        <span>
+          <p>by <label class="post-author">{{post.username}}</label></p>
+        </span>
+        <hr>
+        <p [innerHTML]="post.content"></p>
+        <hr>
+        <img class="picture" [src]="picture" height="200" *ngIf=post.pic>
+        <!--        TODO: Add delete and edit button.-->
+        <!--        <div class="buttons">-->
+        <!--          <button type="button" class="delete" >Delete</button>-->
+        <!--          <button type="button" class="edit" >Edit</button>-->
+        <!--        </div>-->
+      </div>
+
+    </div>
+  </div>
+</div>

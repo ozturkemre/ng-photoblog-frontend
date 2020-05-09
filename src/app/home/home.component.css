@@ -1,0 +1,47 @@
+.content {
+  background-color: #ffcc8a;
+}
+
+.row {
+  background-color: #ffd88a;
+}
+
+.blog-title, .blog-author, .blog-content, .blog-author, .blog-pic .read-more {
+  padding-left: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.btn {
+  padding-bottom: 20px;
+}
+
+.blog-pic {
+  padding-left: 100px;
+}
+
+.blog-content {
+}
+
+.blog-author {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.read-more {
+  background-color: #1976d2;
+}
+
+.read-more:hover {
+  background-color: white;
+}
+
+
+.empty {
+  background-color: #ffa42b;
+  width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+
+}
