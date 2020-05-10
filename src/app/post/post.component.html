@@ -10,11 +10,10 @@
         <p [innerHTML]="post.content"></p>
         <hr>
         <img class="picture" [src]="picture" height="200" *ngIf=post.pic>
-        <!--        TODO: Add delete and edit button.-->
-        <!--        <div class="buttons">-->
-        <!--          <button type="button" class="delete" >Delete</button>-->
-        <!--          <button type="button" class="edit" >Edit</button>-->
-        <!--        </div>-->
+        <div class="buttons" *ngIf="authService.isOwner(post.username)">
+          <button type="button" class="delete" (click)="deletePost()">Delete</button>
+          <button type="button" class="edit" (click)="editPost()">Edit</button>
+        </div>
       </div>
 
     </div>

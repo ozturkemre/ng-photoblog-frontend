@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AddPostService} from '../add-post.service';
 import {PostPayload} from '../add-post/post-payload';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-post',
@@ -14,11 +15,11 @@ export class PostComponent implements OnInit {
   permaLink: Number;
   picture: any;
 
-  constructor(private router: ActivatedRoute, private postService: AddPostService) {
+  constructor(private route: ActivatedRoute, private postService: AddPostService, private router: Router, public authService: AuthService) {
   }
 
   ngOnInit(): void {
-    this.router.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.permaLink = params.id;
     });
 
@@ -30,4 +31,17 @@ export class PostComponent implements OnInit {
     });
   }
 
+
+  deletePost() {
+    this.postService.deletePost(this.permaLink).subscribe(data => {
+      console.log('Post successfully deleted');
+      this.router.navigate(['/']);
+    }, error => {
+      console.log('Failed while deleting post');
+    });
+  }
+
+  editPost() {
+    this.router.navigate(['/edit-post/', this.permaLink]);
+  }
 }

@@ -40,4 +40,8 @@ export class AuthService {
     this.localStorageService.clear('username');
     console.log('Logout success');
   }
+
+  isOwner(username): boolean {
+    return this.localStorageService.retrieve('username') === username;
+  }
 }
