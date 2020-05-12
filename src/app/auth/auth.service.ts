@@ -44,4 +44,15 @@ export class AuthService {
   isOwner(username): boolean {
     return this.localStorageService.retrieve('username') === username;
   }
+
+  isAdmin(username): boolean {
+    console.log(this.localStorageService);
+    console.log(this.localStorageService.retrieve('roles'));
+    console.log(this.localStorageService.retrieve('username'));
+    return this.localStorageService.retrieve('role') === 'ROLE_ADMIN';
+  }
+
+  getUserName(): String {
+    return this.localStorageService.retrieve('username');
+  }
 }

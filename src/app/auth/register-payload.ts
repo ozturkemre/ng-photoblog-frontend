@@ -3,4 +3,5 @@ export class RegisterPayload {
   email: String;
   password: String;
   confirmPassword: String;
+  avatar: Array<any>[];
 }

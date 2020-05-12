@@ -4,7 +4,7 @@
       <div class="col-md-8">
         <h1 class="blog-title">{{post.title}}</h1>
         <span>
-          <p>by <label class="post-author">{{post.username}}</label></p>
+          <p><a class="post-author" href="/user/{{post.username}}">{{post.username}} </a></p>
         </span>
         <hr>
         <p [innerHTML]="post.content"></p>

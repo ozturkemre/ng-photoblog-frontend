@@ -17,7 +17,8 @@ import {EditorModule} from '@tinymce/tinymce-angular';
 import {HttpClientInterceptor} from './http-client-interceptor';
 import {PostComponent} from './post/post.component';
 import {AuthGuard} from './auth.guard';
-import { EditPostComponent } from './edit-post/edit-post.component';
+import {EditPostComponent} from './edit-post/edit-post.component';
+import {UserPageComponent} from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     HomeComponent,
     AddPostComponent,
     PostComponent,
-    EditPostComponent
+    EditPostComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
       {path: 'register-success', component: RegisterSuccessComponent},
       {path: 'home', component: HomeComponent},
       {path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard]},
-      {path: 'edit-post/:id', component: EditPostComponent, canActivate: [AuthGuard]}
+      {path: 'edit-post/:id', component: EditPostComponent, canActivate: [AuthGuard]},
+      {path: 'user/:username', component: UserPageComponent}
 
     ]),
     HttpClientModule,

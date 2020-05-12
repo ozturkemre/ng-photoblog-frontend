@@ -13,6 +13,9 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   registerPayload: RegisterPayload;
+  private base64Avatar: any;
+  avatar: any;
+  element: HTMLImageElement;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.registerForm = this.formBuilder.group({
@@ -25,7 +28,8 @@ export class RegisterComponent implements OnInit {
       username: '',
       email: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      avatar: []
     };
   }
 
@@ -37,12 +41,31 @@ export class RegisterComponent implements OnInit {
     this.registerPayload.email = this.registerForm.get('email').value;
     this.registerPayload.password = this.registerForm.get('password').value;
     this.registerPayload.confirmPassword = this.registerForm.get('confirmPassword').value;
+    this.registerPayload.avatar = this.base64Avatar;
+    console.log(this.registerPayload);
 
     this.authService.register(this.registerPayload).subscribe(data => {
       console.log('register success');
       this.router.navigateByUrl('/register-success');
     }, error => {
-      console.log('register failed');
+      console.log(error.error.message);
+      document.getElementById('feedback').innerHTML = error.error.message;
     });
   }
+
+  public onFileChanged(event) {
+
+    const reader = new FileReader();
+    reader.readAsBinaryString(event.target.files[0]);
+    reader.onload = () => {
+      if (typeof reader.result === 'string') {
+        this.base64Avatar = btoa(reader.result);
+      }
+      this.avatar = 'data:image/jpg;base64,' + this.base64Avatar;
+    };
+
+
+  }
+
+
 }

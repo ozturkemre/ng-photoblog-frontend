@@ -29,6 +29,6 @@ export class AddPostService {
   }
 
   editPost(permaLink: Number, postPayload: PostPayload) {
-    return this.httpClient.put('http://localhost:8080/api/posts/edit/' + permaLink , postPayload);
+    return this.httpClient.put('http://localhost:8080/api/posts/edit/' + permaLink, postPayload);
   }
 }

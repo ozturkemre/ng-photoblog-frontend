@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="container row">
+    <div class="profile column">
+      <img class="avatar" src="{{avatar}}">
+
+      <p>{{user.userName}}</p>
+      <p>{{userRole}}</p>
+    </div>
+    <div class="posts column">
+      <div class="row" *ngFor="let post of posts">
+        <div class="post">
+          <h3><a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
+          <div class="blog-author">
+            <i class="fas fa-user"></i> Author <p>{{post.username}}</p>
+          </div>
+          <p class="blog-content" [innerHTML]="post.content"></p>
+          <hr>
+          <img class="blog-pic" [src]="'data:image/jpg;base64,' +post.pic" height="200" *ngIf=post.pic>
+          <hr>
+          <br>
+        </div>
+
+        <hr>
+      </div>
+      <div class="row" *ngIf="posts.length==0">
+        <i>This user has no posts.</i>
+      </div>
+    </div>
+
+  </div>
+</div>

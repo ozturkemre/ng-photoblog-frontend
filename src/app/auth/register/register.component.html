@@ -16,11 +16,24 @@
       <input type="password" id="inputPassword" [formControlName]="'password'" class="form-control"
              placeholder="Password" required="">
     </div>
+    <!--    TODO: Check for same password-->
     <div class="form-group">
       <label for="inputConfirmPassword" class="sr-only">Password</label>
       <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control"
              placeholder="Confirm Password" required="">
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <img id="img" [src]="avatar" height="200" *ngIf="avatar">
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" (change)="onFileChanged($event)" class="custom-file-input" id="inputGroupFile02">
+        <label class="custom-file-label" for="inputGroupFile02">Choose Avatar</label>
+      </div>
+      <div class="input-group-append">
+        <button type="submit" class="input-group-text" id="">Submit</button>
+      </div>
+    </div>
+    <div class="feedback">
+      <label id="feedback"></label>
+    </div>
   </form>
 </div>

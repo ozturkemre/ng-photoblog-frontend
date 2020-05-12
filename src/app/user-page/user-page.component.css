@@ -1,0 +1,29 @@
+.content {
+  background-color: #ffcc8a;
+}
+
+.profile {
+  float: left;
+  width: 20%;
+}
+
+.posts {
+  float: left;
+  width: 80%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.picture {
+  padding-bottom: 50px;
+}
+
+.post-author {
+  font-style: italic;
+  font-weight: bold;
+}

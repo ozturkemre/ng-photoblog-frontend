@@ -17,6 +17,7 @@ export class AddPostComponent implements OnInit {
   content = new FormControl('');
   imgURL: any;
   private base64Image: any;
+  feedback: string;
 
   constructor(private addPostService: AddPostService, private router: Router) {
     this.addPostForm = new FormGroup({
@@ -47,6 +48,8 @@ export class AddPostComponent implements OnInit {
       this.router.navigateByUrl('/');
     }, error => {
       console.log('Failed send post to server.');
+      document.getElementById('feedback').innerHTML = 'Failed send post to server.';
+
     });
 
   }

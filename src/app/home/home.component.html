@@ -4,7 +4,7 @@
       <div class="post">
         <h3><a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
         <div class="blog-author">
-          <i class="fas fa-user"></i> Author <p>{{post.username}}</p>
+          <i class="fas fa-user"></i> Author <a href="/user/{{post.username}}">{{post.username}}</a>
         </div>
         <p class="blog-content" [innerHTML]="post.content"></p>
         <hr>

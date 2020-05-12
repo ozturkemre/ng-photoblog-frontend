@@ -16,14 +16,14 @@
 }
 
 
-.logout, .new-post {
+.logout, .new-post, .profile {
   float: right;
   color: aliceblue;
   padding-top: 10px;
   font-size: 25px;
 }
 
-.logout:hover, .new-post:hover {
+.logout:hover, .new-post:hover, .profile:hover {
   color: aliceblue;
   text-decoration: none;
 }
